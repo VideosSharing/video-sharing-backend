@@ -33,6 +33,6 @@ class V1::Auth::LoginOperation < ApplicationOperation
       sub: user.id,
       email: user.email
     };
-    JWT.encode(payload, ENV['JWT_SECRET_KEY'], 'none')
+    JWT.encode(payload, ENV.fetch['JWT_SECRET_KEY'], 'none')
   end
 end
